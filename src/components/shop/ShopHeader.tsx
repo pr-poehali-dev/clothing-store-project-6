@@ -73,7 +73,7 @@ export default function ShopHeader({
               )}
             </button>
             <button onClick={() => navigate("/card")}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all"
               style={{ border: "1px solid rgba(255,45,155,0.4)", color: "var(--neon-pink)" }}
               onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,45,155,0.1)"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}>

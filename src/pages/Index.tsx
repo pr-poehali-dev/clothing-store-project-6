@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/936a2487-6256-47e6-9e29-f997125c1008/files/63422b73-5171-491e-b8d7-a73521bbd72c.jpg";
@@ -39,6 +40,7 @@ interface User {
 }
 
 export default function Index() {
+  const navigate = useNavigate();
   const [page, setPage] = useState<Page>("catalog");
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -153,6 +155,14 @@ export default function Index() {
                 <span className="absolute -top-0.5 -right-0.5 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center"
                   style={{ background: "var(--neon-pink)" }}>{cartCount}</span>
               )}
+            </button>
+            <button onClick={() => navigate("/card")}
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all"
+              style={{ border: "1px solid rgba(255,45,155,0.4)", color: "var(--neon-pink)" }}
+              onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,45,155,0.1)"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; }}>
+              <Icon name="Contact" size={13} />
+              Контакты
             </button>
           </div>
         </div>
